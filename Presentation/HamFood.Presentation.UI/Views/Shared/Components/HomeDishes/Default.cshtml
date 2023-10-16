@@ -1,0 +1,36 @@
+﻿@using HamFood.Core.Application.Dtos.MenuDtos;
+@model List<ResultMenuDto>
+<!-- dishes section -->
+<section class="w3l-recipes py-5">
+    <div class="container py-md-5 py-4">
+        <div class="row">
+            <div class="col-lg-6 recipe-left mb-md-0 mb-5">
+                <div class="section-heading mb-sm-5 mb-4">
+                    <h3 class="title-style mb-2 text-white">Yiyeceklerimiz</h3>
+                    <p class="lead text-white">
+                        Hamfood'un lezzetleri, damakları coşturuyor. Her lokma, taptaze malzemeler ve ustaca hazırlanan yemeklerle dolu bir lezzet şöleni sunuyor.
+                    </p>
+                </div>
+                @foreach (var item in Model)
+                {
+                    <div class="menu-sec mt-5 pt-md-4">
+                        <div class="row border-dot no-gutters">
+                            <div class="col-8 menu-item-name-home">
+                                <h6>@item.MenuName</h6>
+                            </div>
+                            <div class="col-4 menu-item-price-home text-right">
+                                <h6>@item.MenuPrice ₺</h6>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <a class="btn btn-style-white btn-style-border mt-5" href="/menu">Daha Fazla</a>
+            </div>
+            <div class="col-lg-6 recipe-right pl-5">
+                <img src="~/Bistros-Starter/assets/images/image1.png" alt="" class="img-fluid img-responsive" />
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //dishes section -->

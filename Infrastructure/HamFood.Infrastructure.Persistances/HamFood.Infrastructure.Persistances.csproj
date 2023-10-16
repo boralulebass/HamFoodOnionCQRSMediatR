@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\HamFood.Core.Application\HamFood.Core.Application.csproj" />
     <ProjectReference Include="..\..\Core\HamFood.Core.Domain\HamFood.Core.Domain.csproj" />
   </ItemGroup>
 

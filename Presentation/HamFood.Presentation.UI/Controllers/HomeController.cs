@@ -1,32 +1,39 @@
-﻿using HamFood.Presentation.UI.Models;
+﻿using HamFood.Core.Application.Dtos.CategoryDtos;
+using HamFood.Core.Application.Dtos.MenuDtos;
+using HamFood.Presentation.UI.Services;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 
 namespace HamFood.Presentation.UI.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IApiService _apiService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IApiService apiService)
         {
-            _logger = logger;
+            _apiService = apiService;
         }
 
+        [Route("/")]
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+
+        public PartialViewResult Banner()
         {
-            return View();
+            return PartialView();
+        }
+        public PartialViewResult About()
+        {
+            return PartialView();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public PartialViewResult Stats()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return PartialView();
         }
+
     }
 }
